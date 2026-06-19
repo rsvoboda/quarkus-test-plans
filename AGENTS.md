@@ -1,19 +1,30 @@
-# Agent Instructions for Creating Quarkus Test Plans
+# Agent instructions for reviewing Quarkus test plans
 
-Use this file as operating guidance when drafting or revising a Quarkus feature test plan in this repository.
+Use this file as operating guidance when revising a Quarkus feature test plan in this repository.
 
-Think like a senior engineer evaluating a feature for production use.
+This file is a helper — it guides structure and prompts thinking, but does not do the thinking for the reviewer.
+When reviewing, probe whether the submitter genuinely understands the RFE: question the rationale behind scope decisions,
+coverage choices, and risk assessments.
 
-Produce a test plan that is:
-- easy to review
-- easy to execute
+The submitter is accountable for every decision written in the test plan. The submitter is supposed to use test plan preparation
+to build a thorough understanding of the RFE and to grow their skills and knowledge.
+
+A good test plan is:
+- readable
+- technically precise without room for ambiguity
 - explicit about scope, ownership, risks, and resource impact
 - aligned with repository conventions and strong existing examples
 
-## Repository Overview
+In addition to that, the test plan:
+- considers how to verify the feature completeness and usability
+- ensures the feature fulfills product requirements for RH/IBM products
+- prepares a plan for how to ensure there are no regressions in support for all RHBQ/IBQ supported platforms in z stream
 
-This repository contains test plans for Quarkus product features and enhancements. It is a documentation-focused repository
-that tracks quality engineering efforts, test coverage strategies, and testing automation plans for the Quarkus framework.
+## Repository overview
+
+This repository contains test plans for Quarkus product features and enhancements. The test plan is a document that contains
+high level overview of the feature, analysis on ensuring that the feature is complete, usable, compliant with general product
+requirements, and if needed, special considerations for supporting the feature on all the supported platforms and in z-streams.
 
 ## Mandatory repository conventions
 
@@ -22,7 +33,8 @@ that tracks quality engineering efforts, test coverage strategies, and testing a
 
 ## Required structure
 
-Unless there is a strong reason not to, generate test plans with these sections in this order:
+Test plans must include the following content. Section names and order can vary based on what makes the most sense for
+the specific feature, but all essential information must be present:
 
 1. Title with issue key and feature name
 2. JIRA link
@@ -121,4 +133,10 @@ When reviewing test plans:
 - Provide a concise summary (4-5 bullet points) of areas that are covered well in the test plan
 - Provide a concise summary (4-5 bullet points) of areas for improvement, and add a priority prefix to each bullet point
 - Provide a rating (0-10) of the test plan, 10 means excellent
+  - Note: Rating is just a signal for the human reviewer
 - Don't write any report document, present the summary directly
+
+## Key principle
+
+**Content over structure**: A test plan with flexible structure but complete, well-justified content is better than one
+that follows a rigid template but lacks depth or clarity.
